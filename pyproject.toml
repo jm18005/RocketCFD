@@ -1,0 +1,39 @@
+[project]
+name = "rocketcfd"
+version = "0.1.0"
+description = "Automated OpenFOAM CFD tool for LRA rocket aerodynamics."
+readme = "README.md"
+authors = [
+    { name = "jm36005", email = "jm36005@outlook.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "mapbox-earcut>=1.0.1",
+    "matplotlib>=3.11.1",
+    "networkx>=3.4.0",
+    "numpy>=2.5.2",
+    "pint>=0.25.3",
+    "pymeshfix>=0.18.1",
+    "pyside6>=6.11.2",
+    "pyvista>=0.48.4",
+    "pyvistaqt>=0.13.0",
+    "requests>=2.32.0",
+    "scipy>=1.18.1",
+    "shapely>=2.0.0",
+    "trimesh>=5.1.0",
+]
+
+[project.optional-dependencies]
+cad = ["cadquery-ocp>=7.9.3.1.1"]
+
+[project.scripts]
+rocketcfd = "rocketcfd:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
